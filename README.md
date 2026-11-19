@@ -4,6 +4,8 @@ Explore a small, verified index of observations from the James Webb Space Telesc
 
 For an arbitrary target name or coordinate, select **Search all of MAST** and enter it in the official portal. This selected index fits a static site and uses no cross-origin API call while searching. Image previews are fetched from the source only when requested in a record. The linked FITS file may be large and follow its own access rules. Check the archive's required product attributions before reuse.
 
+For exoplanet papers and measurements, [compare the published masses of TRAPPIST-1 e](https://coolcode.ca/planetpapers/?planet=TRAPPIST-1%20e).
+
 ## Build
 
 - `python3 scripts/build.py` queries the MAST Table Access Protocol service for bounded results, checks anonymous preview URLs, and writes `dist/`. A failed or incomplete refresh builds from the verified local snapshot and displays the dated fallback.
