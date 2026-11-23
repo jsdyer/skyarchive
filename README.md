@@ -1,5 +1,9 @@
 # Sky Archive
 
+<!-- coolcode:guide -->
+Search the selected observation index, inspect a record’s dates and instruments, and request its source preview or export metadata. Use Search all of MAST for arbitrary targets; the local selection is not the full archive and individual products can require additional attribution.
+<!-- /coolcode:guide -->
+
 Explore a small, verified index of observations from the James Webb Space Telescope and the Hubble Space Telescope, including Hubble Legacy Archive entries. Find Andromeda, Orion, the Southern Ring Nebula, the Cosmic Cliffs, and the Tarantula Nebula. Search by observed target, instrument, product type or observation ID. Inspect dates, coordinates, exposure and wavelength fields, preview source imagery, and export filtered metadata to CSV.
 
 For an arbitrary target name or coordinate, select **Search all of MAST** and enter it in the official portal. This selected index fits a static site and uses no cross-origin API call while searching. Image previews are fetched from the source only when requested in a record. The linked FITS file may be large and follow its own access rules. Check the archive's required product attributions before reuse.
@@ -21,3 +25,18 @@ A scheduled GitHub Pages build may use the default command. No API key or accoun
 - [MAST Data Use](https://archive.stsci.edu/publishing/data-use)
 
 Credit NASA, ESA, CSA and STScI as appropriate. Product records, previews and data may require additional investigators or archive-specific credit.
+
+## Regression checks
+
+Pull requests that change code run logic tests and Chromium checks at this tool’s
+Pages subpath, including a real control interaction and 320/390-pixel layouts.
+Documentation-only pull requests skip this workflow. Publication waits for the
+same checks. Test data stays in a separate job and is never packaged for Pages.
+
+```sh
+python3 -m unittest discover -s tests -v
+python3 scripts/build.py --offline
+python3 -m pip install -r tests/browser-requirements.txt
+python3 -m playwright install chromium
+python3 tests/browser_smoke.py
+```

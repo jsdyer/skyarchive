@@ -1,0 +1,26 @@
+{
+  "id": "skyarchive",
+  "title": "Sky Archive Explorer",
+  "description": "Find selected Hubble and Webb observations and open the original archive records.",
+  "category": "field-kit",
+  "tags": [
+    "mast",
+    "hubble",
+    "jwst",
+    "webb",
+    "astronomy",
+    "fits",
+    "images",
+    "telescope"
+  ],
+  "icon": "sparkles",
+  "url": "/skyarchive/",
+  "source": "https://github.com/jsdyer/skyarchive",
+  "hosting": "project",
+  "access": "browser",
+  "data_info": {
+    "mode": "snapshot",
+    "detail": "The MAST archive supplies selected Hubble and Webb observations of five targets.",
+    "cadence": "Weekly"
+  }
+}
